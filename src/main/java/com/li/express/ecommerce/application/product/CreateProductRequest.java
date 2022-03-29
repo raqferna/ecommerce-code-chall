@@ -1,9 +1,13 @@
 package com.li.express.ecommerce.application.product;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.List;
 
 import com.li.express.ecommerce.application.order.OrderFieldData;
+import com.li.express.ecommerce.domain.Product;
+import com.li.express.ecommerce.domain.ProductDescription;
+import com.li.express.ecommerce.domain.ProductOrderField;
 
 
 public class CreateProductRequest implements Serializable{
@@ -36,6 +40,17 @@ public class CreateProductRequest implements Serializable{
 	public 	List<OrderFieldData> getOrderFields() {
 		return orderFields;
 	}
+	
+	public List<ProductOrderField> getProductOrderFields(){
+		List<ProductOrderField> orderFields = new ArrayList<ProductOrderField>();
+		if(!this.orderFields.isEmpty()) {
+			orderFields.forEach(order ->{
+				orderFields.add(order);
+			});
+		}
+		return orderFields;
+	}
+	
 	
 
 

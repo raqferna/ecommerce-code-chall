@@ -26,7 +26,6 @@ public class Product {
 	    	this.productOrderFields = productOrderFields;
 	    	this.productStatus = ProductStatus.ACTIVE;
 	}
-    
  
     
     public boolean isActive() {
@@ -77,11 +76,15 @@ public class Product {
 	    private List<ProductOrderField> productOrderFields;
 	    private ProductId productId;
 	    
-	    public ProductBuilder productId(ProductId productId) {
+	    public ProductBuilder (ProductId productId) {
 	    	this.productId = productId;
+	    }
+	    
+	    public ProductBuilder productOrderFields(List<ProductOrderField> productOrderFields) {
+	    	this.productOrderFields = productOrderFields;
 	    	return this;
 	    }
-	   
+	    
 	    public ProductBuilder productName(String productName) {
 	    	this.productName = productName;
 	    	return this;
@@ -99,6 +102,11 @@ public class Product {
 	    	return new Product(productId, productName, productDescription,productPrice,productOrderFields );
 	    }
   }
- 
+
+
+
+
+
+
 
 }

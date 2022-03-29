@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.li.express.ecommerce.application.product.ApplicationProductService;
 import com.li.express.ecommerce.application.product.CreateProductRequest;
 import com.li.express.ecommerce.application.product.ProductsResponse;
 import com.li.express.ecommerce.domain.Order;
@@ -25,18 +26,17 @@ import com.li.express.ecommerce.domain.service.ProductService;
 @RequestMapping("/products")
 public class ProductController {
 	
-	private ProductService productService;
+	private ApplicationProductService productService;
 	
   
     @Autowired
-    public ProductController(ProductService productService) {
+    public ProductController(ApplicationProductService productService) {
         this.productService = productService;
     }
 
     @PostMapping(produces = MediaType.APPLICATION_JSON_VALUE, consumes = MediaType.APPLICATION_JSON_VALUE)
     void createProduct(@RequestBody final CreateProductRequest product) throws IOException, JsonMappingException, JsonProcessingException {
-    	CreateProductRequest d;
-       // productService.createProduct( mapper.readValue(createProductRequest, Product.class)	);
+    	productService.createProduct(product);
     }
     
 

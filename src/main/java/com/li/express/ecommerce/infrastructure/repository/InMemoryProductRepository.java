@@ -30,7 +30,6 @@ public class InMemoryProductRepository implements ProductRepository{
 	@Override
 	public void addProduct(Product newProduct) {
 		products.add(newProduct);
-		
 	}
 
 	@Override
@@ -58,6 +57,11 @@ public class InMemoryProductRepository implements ProductRepository{
 		ProductOrderField orderField = new ProductOrderField("name "+name, "type "+descProd);
 		ProductId id = new ProductId(products.size());
 		return new Product(id, productName, desc, price,Arrays.asList(orderField));
+	}
+
+	@Override
+	public ProductId nextProductId() {
+		return new ProductId(products.size());
 	}
 
 }

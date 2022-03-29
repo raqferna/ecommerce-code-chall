@@ -10,6 +10,9 @@ public interface ProductRepository {
 	Optional<Product> findProduct(ProductId productId);
 	
 	List<Product> findProductsActive();
+	
+	ProductId nextProductId();
+	
 
 
 }

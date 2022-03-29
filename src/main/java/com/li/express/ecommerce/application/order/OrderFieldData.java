@@ -2,6 +2,8 @@ package com.li.express.ecommerce.application.order;
 
 import java.io.Serializable;
 
+import com.li.express.ecommerce.domain.ProductOrderField;
+
 public class OrderFieldData implements Serializable{
 
 	private static final long serialVersionUID = 1793934743911486614L;
@@ -20,5 +22,9 @@ public class OrderFieldData implements Serializable{
 
 	public String getType() {
 		return type;
+	}
+	
+	public ProductOrderField getProductOrderField() {
+		return new ProductOrderField(this.name, this.type);
 	}
 }

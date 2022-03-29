@@ -26,7 +26,7 @@ public class DomainProductService implements ProductService{
 
 
 	@Override
-	public Optional<Product> getProductDescription(ProductId id) {
+	public Optional<Product> getProduct(ProductId id) {
 		return repository.findProduct(id);
 	}
 

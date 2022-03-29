@@ -1,11 +1,13 @@
 package com.li.express.ecommerce.application.product;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.stereotype.Service;
 
 import com.li.express.ecommerce.domain.product.Product;
 import com.li.express.ecommerce.domain.product.ProductDescription;
+import com.li.express.ecommerce.domain.product.ProductId;
 import com.li.express.ecommerce.domain.product.ProductRepository;
 import com.li.express.ecommerce.domain.service.ProductService;
 
@@ -38,9 +40,14 @@ public class ApplicationProductService {
 		return productService.getActiveProducts();
 	}
 	
-	
-
+	public ProductDetailReponse getProductDetail(int productId) {
+		Optional<Product> product = productService.getProduct(new ProductId(productId));
+		if(product.isPresent()) {
+			return ProductDetailReponse.fromProduct(product.get());
+		}
+		return new ProductDetailReponse();
 	}
 	
+}
 
 

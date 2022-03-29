@@ -39,29 +39,31 @@ public class InMemoryProductRepository implements ProductRepository{
 
 	@Override
 	public List<Product> findProductsActive() {
-		
 		return products.stream().filter(Product::isActive).collect(Collectors.toList());
 	}
 	
-	private void populateProducts() {
-		products.add(getSampleProduct("Prod1", "desc1", 1));
-		products.add(getSampleProduct("Prod2", "desc2", 1));
-		products.add(getSampleProduct("Prod3", "desc3", 1));
-		products.add(getSampleProduct("Prod4", "desc4", 1));
-
-	}
 	
-	private Product getSampleProduct(String name, String descProd, double price) {
-		String productName =name;
-		ProductDescription desc= new  ProductDescription(descProd);
-		ProductOrderField orderField = new ProductOrderField("name "+name, "type "+descProd);
-		ProductId id = new ProductId(products.size());
-		return new Product(id, productName, desc, price,Arrays.asList(orderField));
-	}
-
 	@Override
 	public ProductId nextProductId() {
-		return new ProductId(products.size());
+		return new ProductId(products.size()+1);
 	}
+	
+	// FAKE PRODUCTS
+		private void populateProducts() {
+			products.add(getSampleProduct("Prod1", "desc1", 1));
+			products.add(getSampleProduct("Prod2", "desc2", 1));
+			products.add(getSampleProduct("Prod3", "desc3", 1));
+			products.add(getSampleProduct("Prod4", "desc4", 1));
+
+		}
+		
+		private Product getSampleProduct(String name, String descProd, double price) {
+			String productName =name;
+			ProductDescription desc= new  ProductDescription(descProd);
+			ProductOrderField orderField = new ProductOrderField("name "+name, "type "+descProd);
+			ProductId id = new ProductId(products.size()+1);
+			return new Product(id, productName, desc, price,Arrays.asList(orderField));
+		}
+
 
 }

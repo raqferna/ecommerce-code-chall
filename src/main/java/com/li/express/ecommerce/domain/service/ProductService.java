@@ -14,6 +14,6 @@ public interface ProductService {
 	
 	List<Product> getActiveProducts();
 	
-	Optional<Product> getProductDescription(ProductId id);
+	Optional<Product> getProduct(ProductId id);
 	
 }

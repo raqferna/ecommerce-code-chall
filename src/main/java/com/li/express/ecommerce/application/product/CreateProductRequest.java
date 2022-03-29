@@ -4,7 +4,6 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.li.express.ecommerce.application.order.OrderFieldData;
 import com.li.express.ecommerce.domain.product.Product;
 import com.li.express.ecommerce.domain.product.ProductDescription;
 import com.li.express.ecommerce.domain.product.ProductOrderField;
@@ -16,9 +15,9 @@ public class CreateProductRequest implements Serializable{
 	private String name;
 	private String description;
 	String price;
-	List<OrderFieldData> orderFields;
+	List<ProductFieldData> orderFields;
 	
-	public CreateProductRequest (String name,String description,String price, List<OrderFieldData> order_fields) {
+	public CreateProductRequest (String name,String description,String price, List<ProductFieldData> order_fields) {
 		this.name = name;
 		this.description = description;
 		this.price =price;
@@ -37,7 +36,7 @@ public class CreateProductRequest implements Serializable{
 		return price;
 	}
 
-	public 	List<OrderFieldData> getOrderFields() {
+	public 	List<ProductFieldData> getOrderFields() {
 		return orderFields;
 	}
 	

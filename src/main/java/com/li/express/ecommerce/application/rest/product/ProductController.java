@@ -1,26 +1,24 @@
 package com.li.express.ecommerce.application.rest.product;
 
 import java.io.IOException;
-import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
+import org.springframework.lang.NonNull;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.JsonMappingException;
-import com.fasterxml.jackson.databind.ObjectMapper;
 import com.li.express.ecommerce.application.product.ApplicationProductService;
 import com.li.express.ecommerce.application.product.CreateProductRequest;
+import com.li.express.ecommerce.application.product.ProductDetailReponse;
 import com.li.express.ecommerce.application.product.ProductsResponse;
-import com.li.express.ecommerce.domain.order.Order;
-import com.li.express.ecommerce.domain.product.Product;
-import com.li.express.ecommerce.domain.service.OrderService;
-import com.li.express.ecommerce.domain.service.ProductService;
 
 @RestController
 @RequestMapping("/products")
@@ -45,7 +43,11 @@ public class ProductController {
         return new ProductsResponse(productService.getActiveProducts());
     }
     
-    
+
+    @GetMapping(value="/{productId}")
+    ProductDetailReponse getProduct(@PathVariable @NonNull int productId) throws IOException, JsonMappingException, JsonProcessingException {
+        return productService.getProductDetail(productId);
+    }
     
 
 

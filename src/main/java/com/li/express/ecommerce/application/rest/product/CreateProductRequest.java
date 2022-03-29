@@ -1,7 +1,9 @@
-package com.li.express.ecommerce.application.rest;
+package com.li.express.ecommerce.application.rest.product;
 
 import java.io.Serializable;
 import java.util.List;
+
+import com.li.express.ecommerce.application.rest.order.OrderFieldData;
 
 
 public class CreateProductRequest implements Serializable{

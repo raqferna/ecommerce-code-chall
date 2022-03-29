@@ -1,4 +1,4 @@
-package com.li.express.ecommerce.application.rest;
+package com.li.express.ecommerce.application.rest.product;
 
 import java.util.Date;
 

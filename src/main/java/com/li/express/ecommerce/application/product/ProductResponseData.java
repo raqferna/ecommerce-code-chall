@@ -2,7 +2,7 @@ package com.li.express.ecommerce.application.product;
 
 import java.util.Date;
 
-import com.li.express.ecommerce.domain.Product;
+import com.li.express.ecommerce.domain.product.Product;
 
 public class ProductResponseData {
 	public String id;

@@ -5,9 +5,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.li.express.ecommerce.application.order.OrderFieldData;
-import com.li.express.ecommerce.domain.Product;
-import com.li.express.ecommerce.domain.ProductDescription;
-import com.li.express.ecommerce.domain.ProductOrderField;
+import com.li.express.ecommerce.domain.product.Product;
+import com.li.express.ecommerce.domain.product.ProductDescription;
+import com.li.express.ecommerce.domain.product.ProductOrderField;
 
 
 public class CreateProductRequest implements Serializable{

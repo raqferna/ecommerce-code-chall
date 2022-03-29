@@ -3,9 +3,9 @@ package com.li.express.ecommerce.domain.service;
 import java.util.List;
 import java.util.Optional;
 
-import com.li.express.ecommerce.domain.Product;
-import com.li.express.ecommerce.domain.ProductId;
-import com.li.express.ecommerce.domain.ProductRepository;
+import com.li.express.ecommerce.domain.product.Product;
+import com.li.express.ecommerce.domain.product.ProductId;
+import com.li.express.ecommerce.domain.product.ProductRepository;
 
 
 

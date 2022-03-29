@@ -1,4 +1,4 @@
-package com.li.express.ecommerce.domain;
+package com.li.express.ecommerce.domain.product;
 
 import java.util.List;
 import java.util.Optional;

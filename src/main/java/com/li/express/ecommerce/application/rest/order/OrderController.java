@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.li.express.ecommerce.domain.Order;
+import com.li.express.ecommerce.domain.order.Order;
 import com.li.express.ecommerce.domain.service.OrderService;
 
 

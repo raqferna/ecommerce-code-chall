@@ -5,8 +5,8 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 
 import com.li.express.ecommerce.LibereEcommerceChallengeApplication;
-import com.li.express.ecommerce.domain.OrderRepository;
-import com.li.express.ecommerce.domain.ProductRepository;
+import com.li.express.ecommerce.domain.order.OrderRepository;
+import com.li.express.ecommerce.domain.product.ProductRepository;
 import com.li.express.ecommerce.domain.service.DomainOrderService;
 import com.li.express.ecommerce.domain.service.DomainProductService;
 import com.li.express.ecommerce.domain.service.OrderService;

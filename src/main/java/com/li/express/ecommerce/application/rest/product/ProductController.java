@@ -17,8 +17,8 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.li.express.ecommerce.application.product.ApplicationProductService;
 import com.li.express.ecommerce.application.product.CreateProductRequest;
 import com.li.express.ecommerce.application.product.ProductsResponse;
-import com.li.express.ecommerce.domain.Order;
-import com.li.express.ecommerce.domain.Product;
+import com.li.express.ecommerce.domain.order.Order;
+import com.li.express.ecommerce.domain.product.Product;
 import com.li.express.ecommerce.domain.service.OrderService;
 import com.li.express.ecommerce.domain.service.ProductService;
 

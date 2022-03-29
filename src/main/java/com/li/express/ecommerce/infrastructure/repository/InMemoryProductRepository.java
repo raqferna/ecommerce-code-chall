@@ -10,11 +10,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Repository;
 
-import com.li.express.ecommerce.domain.Product;
-import com.li.express.ecommerce.domain.ProductDescription;
-import com.li.express.ecommerce.domain.ProductId;
-import com.li.express.ecommerce.domain.ProductOrderField;
-import com.li.express.ecommerce.domain.ProductRepository;
+import com.li.express.ecommerce.domain.product.Product;
+import com.li.express.ecommerce.domain.product.ProductDescription;
+import com.li.express.ecommerce.domain.product.ProductId;
+import com.li.express.ecommerce.domain.product.ProductOrderField;
+import com.li.express.ecommerce.domain.product.ProductRepository;
 
 @Repository
 @Primary

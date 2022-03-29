@@ -5,9 +5,9 @@ import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
 
-import com.li.express.ecommerce.domain.Order;
-import com.li.express.ecommerce.domain.Product;
 import com.li.express.ecommerce.domain.ReservationId;
+import com.li.express.ecommerce.domain.order.Order;
+import com.li.express.ecommerce.domain.product.Product;
 
 
 

@@ -1,6 +1,10 @@
-package com.li.express.ecommerce.domain;
+package com.li.express.ecommerce.domain.order;
 
 import java.util.List;
+
+import com.li.express.ecommerce.domain.ReservationId;
+import com.li.express.ecommerce.domain.product.ProductId;
+import com.li.express.ecommerce.domain.product.ProductOrderField;
 
 public class Order {
 	

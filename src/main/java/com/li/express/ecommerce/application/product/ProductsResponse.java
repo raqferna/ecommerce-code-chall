@@ -4,7 +4,7 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.li.express.ecommerce.domain.Product;
+import com.li.express.ecommerce.domain.product.Product;
 
 public class ProductsResponse implements Serializable{
 

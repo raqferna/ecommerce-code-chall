@@ -8,9 +8,9 @@ import java.util.stream.Collectors;
 import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Repository;
 
-import com.li.express.ecommerce.domain.Order;
-import com.li.express.ecommerce.domain.OrderRepository;
 import com.li.express.ecommerce.domain.ReservationId;
+import com.li.express.ecommerce.domain.order.Order;
+import com.li.express.ecommerce.domain.order.OrderRepository;
 
 @Repository
 @Primary

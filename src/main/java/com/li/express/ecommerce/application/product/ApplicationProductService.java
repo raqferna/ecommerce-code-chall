@@ -4,9 +4,9 @@ import java.util.List;
 
 import org.springframework.stereotype.Service;
 
-import com.li.express.ecommerce.domain.Product;
-import com.li.express.ecommerce.domain.ProductDescription;
-import com.li.express.ecommerce.domain.ProductRepository;
+import com.li.express.ecommerce.domain.product.Product;
+import com.li.express.ecommerce.domain.product.ProductDescription;
+import com.li.express.ecommerce.domain.product.ProductRepository;
 import com.li.express.ecommerce.domain.service.ProductService;
 
 @Service

@@ -2,9 +2,9 @@ package com.li.express.ecommerce.domain.service;
 
 import java.util.List;
 
-import com.li.express.ecommerce.domain.Order;
-import com.li.express.ecommerce.domain.OrderRepository;
 import com.li.express.ecommerce.domain.ReservationId;
+import com.li.express.ecommerce.domain.order.Order;
+import com.li.express.ecommerce.domain.order.OrderRepository;
 
 
 public class DomainOrderService implements OrderService{

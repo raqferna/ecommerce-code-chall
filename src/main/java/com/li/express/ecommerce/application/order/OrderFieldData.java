@@ -2,7 +2,7 @@ package com.li.express.ecommerce.application.order;
 
 import java.io.Serializable;
 
-import com.li.express.ecommerce.domain.ProductOrderField;
+import com.li.express.ecommerce.domain.product.ProductOrderField;
 
 public class OrderFieldData implements Serializable{
 

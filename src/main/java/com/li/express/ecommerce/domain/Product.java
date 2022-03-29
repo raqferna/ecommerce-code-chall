@@ -23,6 +23,8 @@ public class Product {
 	    	this.productPrice=productPrice;
 	    	this.productId = id;
 	    	this.productDateCreated= new Date();
+	    	this.productOrderFields = productOrderFields;
+	    	this.productStatus = ProductStatus.ACTIVE;
 	}
     
  

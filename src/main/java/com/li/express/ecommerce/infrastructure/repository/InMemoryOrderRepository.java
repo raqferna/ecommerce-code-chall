@@ -5,6 +5,7 @@ import java.util.List;
 import java.util.UUID;
 import java.util.stream.Collectors;
 
+import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Repository;
 
 import com.li.express.ecommerce.domain.Order;
@@ -12,6 +13,7 @@ import com.li.express.ecommerce.domain.OrderRepository;
 import com.li.express.ecommerce.domain.ReservationId;
 
 @Repository
+@Primary
 public class InMemoryOrderRepository implements OrderRepository{
 	
 	List<Order> orders = new ArrayList<>();
@@ -27,9 +29,5 @@ public class InMemoryOrderRepository implements OrderRepository{
 	    return order.getOrderId().value();
 	}
 	
-	
-	private UUID idGenerator() {
-		  return UUID.randomUUID();
-	}
 
 }

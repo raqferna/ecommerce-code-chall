@@ -1,6 +1,7 @@
 package com.li.express.ecommerce.application.rest;
 
 import java.io.IOException;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
@@ -31,17 +32,19 @@ public class ProductController {
     }
 
     @PostMapping(produces = MediaType.APPLICATION_JSON_VALUE, consumes = MediaType.APPLICATION_JSON_VALUE)
-    void createProduct(@RequestBody final String createProductRequest) throws IOException, JsonMappingException, JsonProcessingException {
-    	ObjectMapper mapper = new ObjectMapper();
-        productService.createProduct( mapper.readValue(createProductRequest, Product.class)	);
+    void createProduct(@RequestBody final CreateProductRequest product) throws IOException, JsonMappingException, JsonProcessingException {
+    	CreateProductRequest d;
+       // productService.createProduct( mapper.readValue(createProductRequest, Product.class)	);
     }
     
 
     @GetMapping
-    void getProducts(@RequestBody final String createProductRequest) throws IOException, JsonMappingException, JsonProcessingException {
-    	ObjectMapper mapper = new ObjectMapper();
-        productService.createProduct( mapper.readValue(createProductRequest, Product.class)	);
+    ProductsResponse getProducts() throws IOException, JsonMappingException, JsonProcessingException {
+        return new ProductsResponse(productService.getActiveProducts());
     }
+    
+    
+    
 
 
 

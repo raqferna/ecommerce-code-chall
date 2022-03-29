@@ -6,6 +6,8 @@ import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Repository;
 
 import com.li.express.ecommerce.domain.Product;
@@ -15,10 +17,12 @@ import com.li.express.ecommerce.domain.ProductOrderField;
 import com.li.express.ecommerce.domain.ProductRepository;
 
 @Repository
+@Primary
 public class InMemoryProductRepository implements ProductRepository{
 	
 	List<Product> products = new ArrayList<Product>();
 
+	@Autowired
 	public InMemoryProductRepository() {
 		populateProducts();
 	}
@@ -36,6 +40,7 @@ public class InMemoryProductRepository implements ProductRepository{
 
 	@Override
 	public List<Product> findProductsActive() {
+		
 		return products.stream().filter(Product::isActive).collect(Collectors.toList());
 	}
 	

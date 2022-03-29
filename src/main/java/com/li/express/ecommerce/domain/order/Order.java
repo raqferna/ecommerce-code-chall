@@ -19,6 +19,8 @@ public class Order {
 		this.productId = productId;
 	}
 	
+
+	
 	public void addConfigFields(List<ProductOrderField> configFields) {
 		this.configFields = configFields;
 	}

@@ -10,6 +10,7 @@ import org.springframework.stereotype.Repository;
 
 import com.li.express.ecommerce.domain.ReservationId;
 import com.li.express.ecommerce.domain.order.Order;
+import com.li.express.ecommerce.domain.order.OrderId;
 import com.li.express.ecommerce.domain.order.OrderRepository;
 
 @Repository
@@ -27,6 +28,11 @@ public class InMemoryOrderRepository implements OrderRepository{
 	public int createOrder(Order order) {
 		orders.add(order);
 	    return order.getOrderId().value();
+	}
+
+	@Override
+	public OrderId nextOrderId() {
+		return new OrderId(orders.size() + 1);
 	}
 	
 

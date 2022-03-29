@@ -20,6 +20,8 @@ import com.li.express.ecommerce.application.product.CreateProductRequest;
 import com.li.express.ecommerce.application.product.ProductDetailReponse;
 import com.li.express.ecommerce.application.product.ProductsResponse;
 
+import io.swagger.annotations.ApiOperation;
+
 @RestController
 @RequestMapping("/products")
 public class ProductController {
@@ -33,23 +35,24 @@ public class ProductController {
     }
 
     @PostMapping(produces = MediaType.APPLICATION_JSON_VALUE, consumes = MediaType.APPLICATION_JSON_VALUE)
-    void createProduct(@RequestBody final CreateProductRequest product) throws IOException, JsonMappingException, JsonProcessingException {
+    @ApiOperation(nickname = "createProduct", value = "Create new product", notes = "<b>Description:</b>" + " web service to create a new product</p>")
+     void createProduct(@RequestBody final CreateProductRequest product) throws IOException, JsonMappingException, JsonProcessingException {
     	productService.createProduct(product);
-    }
+     }
     
 
     @GetMapping
+    @ApiOperation(nickname = "getProducts", value = "Get all products", notes = "<b>Description:</b>" + " web service to get a list of existing products</p>")
     ProductsResponse getProducts() throws IOException, JsonMappingException, JsonProcessingException {
         return new ProductsResponse(productService.getActiveProducts());
     }
     
 
     @GetMapping(value="/{productId}")
+    @ApiOperation(nickname = "getProduct", value = "Get product", notes = "<b>Description:</b>" + " web service to get a product by Id</p>")
     ProductDetailReponse getProduct(@PathVariable @NonNull int productId) throws IOException, JsonMappingException, JsonProcessingException {
         return productService.getProductDetail(productId);
     }
     
-
-
 
 }

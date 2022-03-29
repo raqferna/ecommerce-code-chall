@@ -5,6 +5,7 @@ import java.util.List;
 import com.li.express.ecommerce.domain.ReservationId;
 import com.li.express.ecommerce.domain.order.Order;
 import com.li.express.ecommerce.domain.order.OrderRepository;
+import com.li.express.ecommerce.domain.product.ProductId;
 
 
 public class DomainOrderService implements OrderService{
@@ -22,8 +23,22 @@ public class DomainOrderService implements OrderService{
 
 	@Override
 	public int createOrder(Order order) {
-		// TODO Auto-generated method stub
-		return 0;
+		if(validateReservationId(order.getReservationId()) && validateProductId(order.getProductId())) {
+			repository.createOrder(order);
+		}
+		return order.getOrderId().value();
+	}
+	
+	
+	private boolean validateReservationId(ReservationId reservationId) {
+		//TODO 
+		return true;
+	}
+	
+
+	private boolean validateProductId(ProductId reservationId) {
+		//TODO 
+		return true;
 	}
 
 }

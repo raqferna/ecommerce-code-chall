@@ -1,4 +1,4 @@
-package com.li.express.ecommerce.application.rest.order;
+package com.li.express.ecommerce.application.order;
 
 import java.io.Serializable;
 

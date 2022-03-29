@@ -1,4 +1,4 @@
-package com.li.express.ecommerce.application.rest.product;
+package com.li.express.ecommerce.application.product;
 
 import java.io.Serializable;
 import java.util.ArrayList;

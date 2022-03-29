@@ -10,7 +10,6 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
@@ -20,10 +19,12 @@ import com.li.express.ecommerce.application.product.CreateProductRequest;
 import com.li.express.ecommerce.application.product.ProductDetailReponse;
 import com.li.express.ecommerce.application.product.ProductsResponse;
 
-import io.swagger.annotations.ApiOperation;
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.tags.Tag;
 
 @RestController
 @RequestMapping("/products")
+@Tag(name = "Products API")
 public class ProductController {
 	
 	private ApplicationProductService productService;
@@ -35,21 +36,21 @@ public class ProductController {
     }
 
     @PostMapping(produces = MediaType.APPLICATION_JSON_VALUE, consumes = MediaType.APPLICATION_JSON_VALUE)
-    @ApiOperation(nickname = "createProduct", value = "Create new product", notes = "<b>Description:</b>" + " web service to create a new product</p>")
-     void createProduct(@RequestBody final CreateProductRequest product) throws IOException, JsonMappingException, JsonProcessingException {
+    @Operation(summary = "createProduct", description = "create new Product")     
+    void createProduct(@RequestBody final CreateProductRequest product) throws IOException, JsonMappingException, JsonProcessingException {
     	productService.createProduct(product);
      }
     
 
     @GetMapping
-    @ApiOperation(nickname = "getProducts", value = "Get all products", notes = "<b>Description:</b>" + " web service to get a list of existing products</p>")
+    @Operation(summary = "foo", description = "get list of active products")   
     ProductsResponse getProducts() throws IOException, JsonMappingException, JsonProcessingException {
         return new ProductsResponse(productService.getActiveProducts());
     }
     
 
     @GetMapping(value="/{productId}")
-    @ApiOperation(nickname = "getProduct", value = "Get product", notes = "<b>Description:</b>" + " web service to get a product by Id</p>")
+    @Operation(summary = "getProduct", description = "get detail of requested product")   
     ProductDetailReponse getProduct(@PathVariable @NonNull int productId) throws IOException, JsonMappingException, JsonProcessingException {
         return productService.getProductDetail(productId);
     }

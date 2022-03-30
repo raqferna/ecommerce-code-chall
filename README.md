@@ -10,9 +10,9 @@ Running the API requires JDK 8, Oracle's JDK or OpenJDK.
 
 ## Building
 
-Run mvn clean install for install the dependencies and build the project.
+Run 'mvn clean install' for install the dependencies and build the project.
 
-Run java -jar libere-ecommerce-challenge-0.0.1-SNAPSHOT.jar ( from location where .jar is generated)
+Run 'java -jar libere-ecommerce-challenge-0.0.1-SNAPSHOT.jar' ( from location where .jar is generated) for start the app.
 
 The endpoints are exposed on 8080 default PORT.
 In the same port you can access the Swagger that documents the API and facilitates the understanding of the same

@@ -5,6 +5,7 @@ import java.util.Optional;
 
 import org.springframework.stereotype.Service;
 
+import com.li.express.ecommerce.domain.ReservationId;
 import com.li.express.ecommerce.domain.product.Product;
 import com.li.express.ecommerce.domain.product.ProductDescription;
 import com.li.express.ecommerce.domain.product.ProductId;
@@ -36,8 +37,8 @@ public class ApplicationProductService {
 			productService.createProduct(pro);
 	}
 
-	public List<Product> getActiveProducts() {
-		return productService.getActiveProducts();
+	public List<Product> getProductsByReservationId(int reservationId) {
+		return productService.getProductsOrderByRelevance(new ReservationId(reservationId));
 	}
 	
 	public ProductDetailReponse getProductDetail(int productId) {

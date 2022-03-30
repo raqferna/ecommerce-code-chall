@@ -9,7 +9,7 @@ public class Product {
 	private ProductId productId;
     private String productName;
     private ProductDescription productDescription;
-    private Date productDateCreated;
+    private Date dateCreated;
     private double productPrice;
     private List<ProductOrderField> productOrderFields;
     private ProductStatus productStatus;
@@ -22,7 +22,7 @@ public class Product {
 	    	this.productName = productName;
 	    	this.productPrice=productPrice;
 	    	this.productId = id;
-	    	this.productDateCreated= new Date();
+	    	this.dateCreated= new Date();
 	    	this.productOrderFields = productOrderFields;
 	    	this.productStatus = ProductStatus.ACTIVE;
 	}
@@ -51,8 +51,8 @@ public class Product {
 		return productDescription;
 	}
 
-	public Date getProductDateCreated() {
-		return productDateCreated;
+	public Date getDateCreated() {
+		return dateCreated;
 	}
 
 	public double getProductPrice() {

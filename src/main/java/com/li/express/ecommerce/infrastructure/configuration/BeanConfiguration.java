@@ -23,8 +23,8 @@ public class BeanConfiguration {
 	
 	    
 	    @Bean
-	    ProductService productService(final ProductRepository productRepo) {
-	        return new DomainProductService(productRepo);
+	    ProductService productService(final ProductRepository productRepo, final OrderService orderService) {
+	        return new DomainProductService(productRepo, orderService);
 	    }
 	
 

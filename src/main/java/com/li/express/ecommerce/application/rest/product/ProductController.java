@@ -1,7 +1,5 @@
 package com.li.express.ecommerce.application.rest.product;
 
-import java.io.IOException;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.lang.NonNull;
@@ -12,8 +10,6 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.databind.JsonMappingException;
 import com.li.express.ecommerce.application.product.ApplicationProductService;
 import com.li.express.ecommerce.application.product.CreateProductRequest;
 import com.li.express.ecommerce.application.product.ProductDetailReponse;
@@ -37,21 +33,21 @@ public class ProductController {
 
     @PostMapping(produces = MediaType.APPLICATION_JSON_VALUE, consumes = MediaType.APPLICATION_JSON_VALUE)
     @Operation(summary = "createProduct", description = "create new Product")     
-    void createProduct(@RequestBody final CreateProductRequest product) throws IOException, JsonMappingException, JsonProcessingException {
+    void createProduct(@RequestBody final CreateProductRequest product) {
     	productService.createProduct(product);
      }
     
 
-    @GetMapping
-    @Operation(summary = "foo", description = "get list of active products")   
-    ProductsResponse getProducts() throws IOException, JsonMappingException, JsonProcessingException {
-        return new ProductsResponse(productService.getActiveProducts());
+    @GetMapping(value="/reservation/{reservationId}")
+    @Operation(summary = "getProducts by reservation", description = "get list of active products by reservationId order by relevance")   
+    ProductsResponse getProducts(@PathVariable @NonNull int reservationId)  {
+        return new ProductsResponse(productService.getProductsByReservationId(reservationId));
     }
     
 
     @GetMapping(value="/{productId}")
     @Operation(summary = "getProduct", description = "get detail of requested product")   
-    ProductDetailReponse getProduct(@PathVariable @NonNull int productId) throws IOException, JsonMappingException, JsonProcessingException {
+    ProductDetailReponse getProduct(@PathVariable @NonNull int productId) {
         return productService.getProductDetail(productId);
     }
     

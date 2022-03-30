@@ -1,5 +1,7 @@
-# ecommerce-code-chall
+# ecommerce-code-challenge
 
 // TODO -> FORMAT DATES
 // TODO -> IMPLEMENT SECURITY IN REQUESTS
 // TODO -> ADD NEW SWAGGER OPENAPI
+
+HOW-TO

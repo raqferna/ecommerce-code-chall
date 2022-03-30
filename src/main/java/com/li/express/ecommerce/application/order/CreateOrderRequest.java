@@ -15,6 +15,10 @@ public class CreateOrderRequest implements Serializable{
 	private String productId;
     private List<ProductFieldData> configFields;
     
+    public CreateOrderRequest() {
+    	
+    }
+    
     public CreateOrderRequest(String reservationId, String productId,List<ProductFieldData> config_fields) {
     	this.reservationId = reservationId;
     	this.productId = productId;

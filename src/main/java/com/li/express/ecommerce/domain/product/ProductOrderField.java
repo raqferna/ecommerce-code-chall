@@ -5,6 +5,10 @@ public class ProductOrderField {
 	private String name;
 	private String type;
 	
+	public ProductOrderField() {
+		
+	}
+	
 	public ProductOrderField( String name, String type) {
 		validateOrderField(name, type);
 		this.name = name;

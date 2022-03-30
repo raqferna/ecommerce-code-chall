@@ -10,6 +10,10 @@ public class ProductFieldData implements Serializable{
 	
 	public String name;
 	public String type;
+	
+	public ProductFieldData() {
+		
+	}
 
 	public ProductFieldData(String name, String type) {
 		this.name = name;

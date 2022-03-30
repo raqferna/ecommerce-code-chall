@@ -32,22 +32,22 @@ public class ProductController {
     }
 
     @PostMapping(produces = MediaType.APPLICATION_JSON_VALUE, consumes = MediaType.APPLICATION_JSON_VALUE)
-    @Operation(summary = "createProduct", description = "create new Product")     
-    void createProduct(@RequestBody final CreateProductRequest product) {
+    @Operation(summary = "create Product", description = "Create new product")  
+    public void createProduct(@RequestBody final CreateProductRequest product) {
     	productService.createProduct(product);
      }
     
 
     @GetMapping(value="/reservation/{reservationId}")
     @Operation(summary = "getProducts by reservation", description = "get list of active products by reservationId order by relevance")   
-    ProductsResponse getProducts(@PathVariable @NonNull int reservationId)  {
+    public ProductsResponse getProducts(@PathVariable @NonNull int reservationId)  {
         return new ProductsResponse(productService.getProductsByReservationId(reservationId));
     }
     
 
     @GetMapping(value="/{productId}")
     @Operation(summary = "getProduct", description = "get detail of requested product")   
-    ProductDetailReponse getProduct(@PathVariable @NonNull int productId) {
+    public ProductDetailReponse getProduct(@PathVariable @NonNull int productId) {
         return productService.getProductDetail(productId);
     }
     

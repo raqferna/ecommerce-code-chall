@@ -1,6 +1,7 @@
 package com.li.express.ecommerce.domain.service;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.when;
 
 import java.util.Optional;
@@ -34,9 +35,11 @@ public class ProductServiceTest {
 		assertEquals(optProduct.get(), sut.getProduct(new ProductId(1)).get());
 	}
 	
-	//TODO
+	@Test
 	void createProduct_whenProductIsValid_saveOk(){
-		
+		Product prod = ProductMother.getRandomProduct();
+		sut.createProduct(prod);
+	    Mockito.verify(this.repository, times(1)).addProduct(prod);
     }
 		
 	

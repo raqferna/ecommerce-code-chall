@@ -2,6 +2,8 @@ package com.li.express.ecommerce.domain.service;
 
 import java.util.List;
 
+import org.springframework.transaction.annotation.Transactional;
+
 import com.li.express.ecommerce.domain.ReservationId;
 import com.li.express.ecommerce.domain.order.Order;
 import com.li.express.ecommerce.domain.order.OrderRepository;
@@ -22,23 +24,31 @@ public class DomainOrderService implements OrderService{
 	}
 
 	@Override
+	@Transactional
 	public int createOrder(Order order) {
-		if(validateReservationId(order.getReservationId()) && validateProductId(order.getProductId())) {
-			repository.createOrder(order);
-		}
+		validateOrder(order);
+		repository.createOrder(order);
 		return order.getOrderId().value();
 	}
 	
-	
-	private boolean validateReservationId(ReservationId reservationId) {
-		//TODO 
-		return true;
+	private void validateOrder(Order order) {
+		validateReservationId(order.getReservationId());
+		validateProductId(order.getProductId());
 	}
 	
+	private void validateReservationId(ReservationId reservationId) {
+		//TODO validation if exists
+		if(reservationId == null) {
+			throw new IllegalArgumentException("ReservationId must not be null");
+		}
+	}
+	
+	private void validateProductId(ProductId productId) {
+		//TODO validation if exists
+		if(productId == null) {
+			throw new IllegalArgumentException("ProductId must not be null");
+		}
 
-	private boolean validateProductId(ProductId reservationId) {
-		//TODO 
-		return true;
 	}
 
 }

@@ -6,6 +6,8 @@ import java.util.Map;
 import java.util.Optional;
 import java.util.stream.Collectors;
 
+import org.springframework.transaction.annotation.Transactional;
+
 import com.li.express.ecommerce.domain.ReservationId;
 import com.li.express.ecommerce.domain.order.Order;
 import com.li.express.ecommerce.domain.product.Product;
@@ -25,7 +27,9 @@ public class DomainProductService implements ProductService{
 	}
 
 	@Override
+	@Transactional
 	public void createProduct(Product product) {
+		//TODO VALIDATE 
 		repository.addProduct(product);
 	}
 

@@ -32,7 +32,8 @@ public class DomainProductService implements ProductService{
 		//TODO VALIDATE 
 		repository.addProduct(product);
 	}
-
+	
+ 
 
 	@Override
 	public Optional<Product> getProduct(ProductId id) {

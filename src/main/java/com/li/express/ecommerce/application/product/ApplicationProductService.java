@@ -26,15 +26,17 @@ public class ApplicationProductService {
 	
 	public void createProduct(CreateProductRequest request) {
 
-			Product pro = new Product
-					     .ProductBuilder(repository.nextProductId())
-			             .productPrice(Long.valueOf(request.getPrice()))
-			             .productDescription(new ProductDescription(request.getDescription()))
-			             .productName(request.getName())
-				         .productOrderFields(request.getProductOrderFields())
-				         .build();
-			
-			productService.createProduct(pro);
+			productService.createProduct(buildProduct(request));
+	}
+	
+	private Product buildProduct(CreateProductRequest request) {
+		return new Product
+			     .ProductBuilder(repository.nextProductId())
+	             .productPrice(Long.valueOf(request.getPrice()))
+	             .productDescription(new ProductDescription(request.getDescription()))
+	             .productName(request.getName())
+		         .productOrderFields(request.getProductOrderFields())
+		         .build();
 	}
 
 	public List<Product> getProductsByReservationId(int reservationId) {
